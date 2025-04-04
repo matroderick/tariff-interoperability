@@ -24,7 +24,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DataEntry"
+                    "$ref": "#/components/schemas/Tariffs"
                   }
                 }
               }
@@ -56,7 +56,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DataEntry"
+                    "$ref": "#/components/schemas/Tariffs"
                   }
                 }
               }
@@ -87,7 +87,7 @@
   },
   "components": {
     "schemas": {
-      "DataEntry": {
+      "Tariffs": {
         "type": "object",
         "properties": {
           "object": { "type": "string" },
