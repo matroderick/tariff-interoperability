@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: API for sharing Tariff data
+  title: API for Tariff data sharing
   version: 1.0.0
   description: API for listing and searching data based on the schema
 servers:
