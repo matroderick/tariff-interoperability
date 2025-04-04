@@ -83,19 +83,71 @@ This API allows users to retrieve and search tariff data, as well as perform mac
   "live_mode": true,
   "tariff_date": "2023-04-16T00:00:00+01:00",
   "tariff_version": "22",
+  "tariff_expiry": "<<value>>",
   "contract_start_date": "2024-09-14T00:00:00+01:00",
   "contract_end_date": "2025-09-13T00:00:00+01:00",
   "mpxn": "1012345678901",
   "is_linked": false,
   "direction": "IMPORT",
-  "the_type": "COMMODITY",
+  "type": "COMMODITY",
   "timezone": "Europe/London",
   "tariff_schedule": [
     {
-      "time_of_use": "DYNAMIC",
+      "time_of_use": "STATIC",
       "standing_charge": 0.321,
       "months": ["All"],
-      "days_and_hours": null
+      "days_and_hours": [
+        {
+          "days": ["Mon,Tue,Wed,Thu,Fri"],
+          "hours": [
+            {
+              "valid_from": "08:00:00",
+              "valid_to": "23:00:00",
+              "rate": [
+                {
+                  "to_kwh": 30.5,
+                  "value": 0.12
+                }
+              ]
+            },
+            {
+              "valid_from": "23:00:00",
+              "valid_to": "08:00:00",
+              "rate": [
+                {
+                  "to_kwh": 30.5,
+                  "value": 0.08
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "days": ["Sat,Sun"],
+          "hours": [
+            {
+              "valid_from": "11:00:00",
+              "valid_to": "16:00:00",
+              "rate": [
+                {
+                  "to_kwh": 30.5,
+                  "value": 0.14
+                }
+              ]
+            },
+            {
+              "valid_from": "16:00:00",
+              "valid_to": "11:00:00",
+              "rate": [
+                {
+                  "to_kwh": 30.5,
+                  "value": 0.22
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "time_created": "2023-05-15T05:37+01:00"
