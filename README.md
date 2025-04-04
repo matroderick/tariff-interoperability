@@ -1,147 +1,104 @@
 # API Documentation
 
 ## Overview
-This API provides access to tariff-related data, including schedules, rates, and provider details. The API follows OpenAPI Specification 3.1.0 and supports Machine-to-Machine authentication using OpenID Connect (OIDC) with TLS 1.3 security.
-
-## Base URL
-```
-https://api.example.com/v1
-```
-
-## Authentication
-The API requires authentication via OpenID Connect (OIDC). Requests must include a JWT token obtained from the authentication endpoint.
-
-- Security: TLS 1.3
-- Authentication: JWT Token-Based
-- OpenID Connect URL: `https://auth.example.com/.well-known/openid-configuration`
+This API allows users to retrieve and search tariff data, as well as perform machine-to-machine authentication using OpenID Connect (OIDC).
 
 ## Endpoints
 
 ### 1. Get All Data
-#### Request
-```
-GET /data
-```
-#### Response
-- **200 OK**: Returns an array of data entries.
-
-```json
-[
-  {
-    "object": "tariff",
-    "object_version": "1.0",
-    "provider_id": "prv_63a6087272921ef075a8fd3e",
-    "supplier_label": "ACME Retail Energy Ltd",
-    "tariff_reference": "gb-acme"
-  }
-]
-```
-
----
+- **Endpoint:** `GET /data`
+- **Description:** Retrieves a list of all available data entries.
+- **Response:**
+  - `200 OK`: A list of data entries.
+- **For Tariff JSON output, refer to the Example at the end of this README.**
 
 ### 2. Search Data by Region
-#### Request
-```
-GET /data/search?region=UKPN
-```
-#### Response
-- **200 OK**: Returns a filtered list of data entries.
+- **Endpoint:** `GET /data/search`
+- **Description:** Retrieves a list of data entries filtered by the specified region.
+- **Parameters:**
+  - `region` (query parameter, required): Region to filter the data by.
+- **Response:**
+  - `200 OK`: A filtered list of data entries.
+- **For Tariff JSON output, refer to the Example at the end of this README.**
 
-```json
-[
-  {
-    "object": "tariff",
-    "region": "UKPN",
-    "tariff_label": "Online Fixed"
-  }
-]
-```
-
----
-
-### 3. Authenticate Machine-to-Machine
-#### Request
-```
-POST /authenticate
-```
-#### Response
-- **200 OK**: Successfully authenticated.
-- **401 Unauthorized**: Authentication failed.
-
----
+### 3. Machine-to-Machine Authentication with OIDC
+- **Endpoint:** `POST /authenticate`
+- **Description:** Authenticates a machine using OpenID Connect (OIDC) for M2M communication.
+- **Security:**
+  - Uses TLS 1.3 for secure communication.
+  - Authentication is JWT token-based.
+  - Clients must present a valid client certificate and JWT for authentication.
+- **Response:**
+  - `200 OK`: Successfully authenticated.
+  - `401 Unauthorized`: Authentication failed.
 
 ## Schema
-The main object in the API is `DataEntry`, which contains the following properties:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `object` | string | The type of object (e.g., tariff). |
-| `provider_id` | string | Internal ID of the provider. |
-| `supplier_label` | string | Name of the energy provider. |
-| `tariff_reference` | string | Reference ID for the tariff. |
-| `region` | string | The region where the tariff applies. |
-| `tariff_schedule` | array | List of tariff schedules. |
+| Field (Level 0) | Field (Level 1) | Field (Level 2) | Field (Level 3) | Field (Level 4) | Type | Example | Description |
+|----------------|----------------|----------------|----------------|----------------|------|---------|-------------|
+| object | | | | | string | tariff | |
+| object_version | | | | | string | 1.0 | |
+| provider_id | | | | | string | prv_63a6087272921ef075a8fd3e | Internal ID of the provider the tariff belongs to. |
+| supplier_label | | | | | string | ACME Retail Energy Ltd | |
+| tariff_reference | | | | | string | gb-acme | |
+| tariff_label | | | | | string | Online Fixed | |
+| location_id | | | | | string | loc_641b90b758fb8e6293716e40 | Internal Location ID the tariff element is associated with. |
+| region | | | | | string | UKPN | |
+| live_mode | | | | | boolean | true | Value true if the object exists in live mode, false otherwise. |
+| tariff_date | | | | | string | 2023-04-16T00:00:00+01:00 | |
+| tariff_version | | | | | string | 22 | |
+| tariff_expiry | | | | | string | <value> | |
+| contract_start_date | | | | | string | 2024-09-14T00:00:00+01:00 | Indicates start date of the energy supply contract. |
+| contract_end_date | | | | | string | 2025-09-13T00:00:00+01:00 | Indicates end date of the energy supply contract. |
+| mpxn | | | | | string | 1012345678901 | |
+| is_linked | | | | | boolean | false | Indicates if the tariff is linked to an external data source. |
+| direction | | | | | string | IMPORT | Indicates direction of energy transfer (IMPORT or EXPORT). |
+| the_type | | | | | string | COMMODITY | Indicates tariff type (COMMODITY or NON_COMMODITY). |
+| timezone | | | | | string | Europe/London | The timezone at the location. |
+| tariff schedule | | | | | object[] | | Tariff schedule object. |
+| | time_of_use | | | | string | DYNAMIC | Type of time-of-use tariff (STATIC or DYNAMIC). |
+| | standing_charge | | | | number | 0.321 | £ per day. |
+| | months | | | | string[] | ["All"] | Months when the tariff is valid. |
+| | days_and_hours | | | | object[] or null | null | null if 'time_of_use' is 'DYNAMIC'. |
+| | | days | | | string[] | ["All"] | Days when schedule is valid. |
+| | | hours | | | object[] | | Hours when the schedule is valid. |
+| | | | valid_from | | string | 00:00:00 | Start time in HH:MM:SS format. |
+| | | | valid_to | | string | 00:00:00 | End time in HH:MM:SS format. |
+| | | | rate | | object[] | | Tariff rate array object. |
+| | | | | to_kwh | number or null | 30.5 | Specifies up to what kWh tariff applies. |
+| | | | | value | number or null | 0.12 | £ per kWh. |
+| time_created | | | | | string | 2023-05-15T05:37+01:00 | Time when this tariff object was created. |
 
-The `tariff_schedule` object includes:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `time_of_use` | string | Type of tariff (STATIC or DYNAMIC). |
-| `standing_charge` | number | Charge per day in GBP. |
-| `months` | array | Months when the tariff is valid. |
-| `days_and_hours` | array | Days and hours when the tariff applies. |
-
-The `days_and_hours` object includes:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `days` | array | Days when the schedule is valid. |
-| `hours` | array | Time slots when the tariff applies. |
-
-The `hours` object includes:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `valid_from` | string | Start time in HH:MM:SS format. |
-| `valid_to` | string | End time in HH:MM:SS format. |
-| `rate` | array | Tiered rate information. |
-
-The `rate` object includes:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `to_kwh` | number or null | Upper limit of kWh for the rate. |
-| `value` | number or null | Cost per kWh in GBP. |
-
-## Example Tariff Schedule JSON
+## Example Tariff JSON Output
 ```json
 {
+  "object": "tariff",
+  "object_version": "1.0",
+  "provider_id": "prv_63a6087272921ef075a8fd3e",
+  "supplier_label": "ACME Retail Energy Ltd",
+  "tariff_reference": "gb-acme",
+  "tariff_label": "Online Fixed",
+  "location_id": "loc_641b90b758fb8e6293716e40",
+  "region": "UKPN",
+  "live_mode": true,
+  "tariff_date": "2023-04-16T00:00:00+01:00",
+  "tariff_version": "22",
+  "contract_start_date": "2024-09-14T00:00:00+01:00",
+  "contract_end_date": "2025-09-13T00:00:00+01:00",
+  "mpxn": "1012345678901",
+  "is_linked": false,
+  "direction": "IMPORT",
+  "the_type": "COMMODITY",
+  "timezone": "Europe/London",
   "tariff_schedule": [
     {
       "time_of_use": "DYNAMIC",
       "standing_charge": 0.321,
       "months": ["All"],
-      "days_and_hours": [
-        {
-          "days": ["All"],
-          "hours": [
-            {
-              "valid_from": "00:00:00",
-              "valid_to": "00:00:00",
-              "rate": [
-                {
-                  "to_kwh": 30.5,
-                  "value": 0.12
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "days_and_hours": null
     }
-  ]
+  ],
+  "time_created": "2023-05-15T05:37+01:00"
 }
 ```
 
-## License
-This API schema is provided under an open-source license. Feel free to contribute and improve the documentation.
