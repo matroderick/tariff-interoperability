@@ -114,14 +114,14 @@ components:
           enum:
             - IMPORT
             - EXPORT
-          description: Indicates direction of energy transfer this tariff applies to. Options: IMPORT or EXPORT.
+          description: Indicates direction of energy transfer this tariff applies to.
           example: "IMPORT"
         the_type:
           type: string
           enum:
             - COMMODITY
             - NON_COMMODITY
-          description: Indicates tariff type. Options: COMMODITY or NON_COMMODITY.
+          description: Indicates tariff type.
           example: "COMMODITY"
         timezone:
           type: string
@@ -138,7 +138,7 @@ components:
                 enum:
                   - STATIC
                   - DYNAMIC
-                description: Type of time-of-use (TOU) tariff. Options: STATIC or DYNAMIC.
+                description: Type of time-of-use (TOU) tariff.
                 example: "DYNAMIC"
               standing_charge:
                 type: number
@@ -159,7 +159,12 @@ components:
                       type: array
                       items:
                         type: string
-                      description: Days when schedule is valid. Options: day numbers (1...31), Weekday (Mon...Fri), Weekend (Sat, Sun) or All.
+                      enum:
+                        - day numbers (1...31)
+                        - Weekday (Mon...Fri)
+                        - Weekend (Sat, Sun)
+                        - All
+                      description: Days when schedule is valid.
                       example: ["All"]
                     hours:
                       type: array
