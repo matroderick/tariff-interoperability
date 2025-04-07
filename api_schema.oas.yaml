@@ -111,10 +111,16 @@ components:
           example: false
         direction:
           type: string
+          enum:
+            - IMPORT
+            - EXPORT
           description: Indicates direction of energy transfer this tariff applies to. Options: IMPORT or EXPORT.
           example: "IMPORT"
         the_type:
           type: string
+          enum:
+            - COMMODITY
+            - NON_COMMODITY
           description: Indicates tariff type. Options: COMMODITY or NON_COMMODITY.
           example: "COMMODITY"
         timezone:
@@ -129,6 +135,9 @@ components:
             properties:
               time_of_use:
                 type: string
+                enum:
+                  - STATIC
+                  - DYNAMIC
                 description: Type of time-of-use (TOU) tariff. Options: STATIC or DYNAMIC.
                 example: "DYNAMIC"
               standing_charge:
