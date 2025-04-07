@@ -140,4 +140,138 @@
           "tariff_expiry": {
             "type": "string"
           },
-          "contract_start_date":
+          "contract_start_date": {
+            "type": "string",
+            "description": "Indicates start date of the energy supply contract between customer and provider.",
+            "example": "2024-09-14T00:00:00+01:00"
+          },
+          "contract_end_date": {
+            "type": "string",
+            "description": "Indicates end date of the energy supply contract between customer and provider.",
+            "example": "2025-09-13T00:00:00+01:00"
+          },
+          "mpxn": {
+            "type": "string",
+            "example": "1012345678901"
+          },
+          "is_linked": {
+            "type": "boolean",
+            "description": "Indicates that the tariff is linked to an external data source and is automatically updated.",
+            "example": false
+          },
+          "direction": {
+            "type": "string",
+            "enum": ["IMPORT", "EXPORT"],
+            "description": "Indicates direction of energy transfer this tariff applies to. Options: IMPORT or EXPORT.",
+            "example": "IMPORT"
+          },
+          "the_type": {
+            "type": "string",
+            "enum": ["COMMODITY", "NON_COMMODITY"],
+            "description": "Indicates tariff type. Options: COMMODITY or NON_COMMODITY.",
+            "example": "COMMODITY"
+          },
+          "timezone": {
+            "type": "string",
+            "description": "The timezone at the location, in 'tz database format'.",
+            "example": "Europe/London"
+          },
+          "tariff_schedule": {
+            "type": "array",
+            "description": "Tariff schedule object.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "time_of_use": {
+                  "type": "string",
+                  "enum": ["STATIC", "DYNAMIC"],
+                  "description": "Type of time-of-use (TOU) tariff. Options: STATIC or DYNAMIC.",
+                  "example": "DYNAMIC"
+                },
+                "standing_charge": {
+                  "type": "number",
+                  "description": "Charge per day.",
+                  "example": 0.321
+                },
+                "months": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Array of 3-letter month abbreviations when the tariff is valid (Jan...Dec). \"All\" specifies all months.",
+                  "example": ["All"]
+                },
+                "days_and_hours": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "days": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Days when schedule is valid. Options: day numbers (1...31), Weekday (Mon...Fri), Weekend (Sat, Sun) or All.",
+                        "example": ["All"]
+                      },
+                      "hours": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "valid_from": {
+                              "type": "string",
+                              "description": "Hours from when the schedule is valid. Format HH:MM:SS.",
+                              "example": "00:00:00"
+                            },
+                            "valid_to": {
+                              "type": "string",
+                              "description": "Hours to when the schedule is valid. Format HH:MM:SS.",
+                              "example": "00:00:00"
+                            },
+                            "rate": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "to_kwh": {
+                                    "type": "number",
+                                    "nullable": true,
+                                    "description": "Specifies up to what kWh tariff applies. Used for tier-based tariffs. If no tiers, leave null.",
+                                    "example": 30.5
+                                  },
+                                  "value": {
+                                    "type": "number",
+                                    "nullable": true,
+                                    "description": "Non-null value means £ per kWh.",
+                                    "example": 0.12
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "time_created": {
+            "type": "string",
+            "description": "Indicates time when this tariff object was created.",
+            "example": "2023-05-15T05:37+01:00"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oidcAuth": {
+        "type": "openIdConnect",
+        "openIdConnectUrl": "https://auth.example.com/.well-known/openid-configuration",
+        "description": "This API uses OpenID Connect (OIDC) for Machine-to-Machine (M2M) authentication.\n- Uses TLS 1.3 for secure communication.\n- Authentication is JWT token-based.\n- Clients must present a valid client certificate and JWT for authentication."
+      }
+    }
+  }
+}
