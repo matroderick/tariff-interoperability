@@ -12,9 +12,9 @@
     }
   ],
   "paths": {
-    "/data": {
+    "/tariff": {
       "get": {
-        "summary": "List all data",
+        "summary": "List all tariff data",
         "description": "Retrieves a list of all available data entries.",
         "responses": {
           "200": {
@@ -29,13 +29,19 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
     },
-    "/data/search": {
+    "/tariff/region/{code}": {
       "get": {
-        "summary": "Search data by region",
+        "summary": "Search tariff data by region",
         "description": "Retrieves a list of data entries filtered by the specified region.",
         "parameters": [
           {
@@ -60,6 +66,12 @@
                   }
                 }
               }
+            },
+            "400": {
+              "description": "Bad Request"
+            },
+            "401": {
+              "description": "Unauthorized"
             }
           }
         }
@@ -77,6 +89,9 @@
         "responses": {
           "200": {
             "description": "Successfully authenticated"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
