@@ -9,7 +9,7 @@ Provide your feedback at [Tariff Interoperability API Discussion](https://github
 ## Dev Portal
 API Specification can be found at [RECCo Public Dev Portal](https://38db35b56c92.edge.eu.portal.konghq.com/apis/api-for-sharing-tariff-data-1-0-0/specifications/84d45b00-df1b-40d4-a322-708590da9549).
 
-## Endpoints
+## Endpoints Summary
 
 ### 1. Get All Data
 - **Endpoint:** `GET /data`
