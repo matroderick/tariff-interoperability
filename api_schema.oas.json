@@ -131,6 +131,7 @@
           },
           "tariff_date": {
             "type": "string",
+            "format": "date-time",
             "description": "Date format in ISO 8601.",
             "example": "2023-04-16T00:00:00+01:00"
           },
@@ -143,11 +144,13 @@
           },
           "contract_start_date": {
             "type": "string",
+            "format": "date-time",
             "description": "Indicates start date (ISO 8601 format) of the energy supply contract between customer and provider.",
             "example": "2024-09-14T00:00:00+01:00"
           },
           "contract_end_date": {
             "type": "string",
+            "format": "date-time",
             "description": "Indicates end date (ISO 8601 format) of the energy supply contract between customer and provider.",
             "example": "2025-09-13T00:00:00+01:00"
           },
@@ -262,6 +265,7 @@
           },
           "time_created": {
             "type": "string",
+            "format": "date-time",
             "description": "Indicates time (ISO 8601 format) when this tariff object was created.",
             "example": "2023-05-15T05:37+01:00"
           }
