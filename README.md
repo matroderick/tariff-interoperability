@@ -52,7 +52,7 @@ We encourage industry stakeholders to share their feedback through **email** to:
 
 All feedback will be:
 - Reviewed and anonymised
-- Uploaded to this GitHub repository (see `[/feedback](feedback/)` folder)
+- Uploaded to this GitHub repository (see [/feedback](feedback/) folder)
 - Logged and responded to regularly
 
 🕓 The feedback folder will be updated **daily** when new input is received.
