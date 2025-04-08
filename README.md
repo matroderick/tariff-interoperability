@@ -32,12 +32,12 @@ Once finalized, these solutions will be reflected in REC text and formally consu
 ### 1. Tariff Data Specification (TDS)
 Defines mandatory and optional data fields and their formats to be used in supplier APIs.
 
-👉 **View the current TDS draft:** [INSERT LINK]
+👉 **View the current TDS draft:** [Data Specification](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FRetail-Energy-Code%2Ftariff-interoperability%2Frefs%2Fheads%2Fmain%2FTariff%2520Data%2520Specification.xlsx&wdOrigin=BROWSELINK).
 
 ### 2. API Specification
 Serves as a blueprint for suppliers to develop their tariff-sharing APIs.
 
-👉 **View the API specification draft:** [INSERT LINK]
+👉 **View the API specification draft:** [API Specification](https://38db35b56c92.edge.eu.portal.konghq.com/apis/api-for-sharing-tariff-data-1-0-0/specifications/84d45b00-df1b-40d4-a322-708590da9549).
 
 ---
 
