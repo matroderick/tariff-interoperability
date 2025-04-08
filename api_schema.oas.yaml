@@ -7,9 +7,9 @@ servers:
   - url: https://api.example.com/v1
     description: Production server
 paths:
-  /data:
+  /tariff:
     get:
-      summary: List all data
+      summary: List all tariff data
       description: Retrieves a list of all available data entries.
       responses:
         "200":
@@ -20,9 +20,13 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Tariffs"
-  /data/search:
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+  /tariff/region/{code}:
     get:
-      summary: Search data by region
+      summary: Search tariff data by region
       description: Retrieves a list of data entries filtered by the specified region.
       parameters:
         - name: region
@@ -40,6 +44,10 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Tariffs"
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
   /authenticate:
     post:
       summary: Machine-to-Machine Authentication
@@ -49,6 +57,8 @@ paths:
       responses:
         "200":
           description: Successfully authenticated
+        "400":
+          description: Bad Request
         "401":
           description: Unauthorized
 components:
