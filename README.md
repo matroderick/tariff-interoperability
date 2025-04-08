@@ -35,9 +35,9 @@ API Specification can be found at [RECCo Public Dev Portal](https://38db35b56c92
   - `200 OK`: Successfully authenticated.
   - `401 Unauthorized`: Authentication failed.
 
+<!--
 ## Schema
 
-<!--
 | Field (Level 0) | Field (Level 1) | Field (Level 2) | Field (Level 3) | Field (Level 4) | Type | Example | Description |
 |----------------|----------------|----------------|----------------|----------------|------|---------|-------------|
 | object | | | | | string | tariff | |
