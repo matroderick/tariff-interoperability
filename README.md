@@ -66,7 +66,7 @@ All feedback will be:
 
 ## Feedback Focus Areas
 
-We are especially interested in your thoughts on:
+We are especially interested in your thoughts on the API Specification, including but not limited to the following:
 
 - ⚙️ **Filtering criteria**: Is filtering by `region` sufficient? Would other criteria be useful?
 - 🔐 **Authentication**: We're using **OIDC (OpenID Connect)**. Is this appropriate for your use case?
