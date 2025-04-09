@@ -226,3 +226,4 @@ components:
         - Uses TLS 1.3 for secure communication.
         - Authentication is JWT token-based.
         - Clients must present a valid client certificate and JWT for authentication.
+        - Further discussion and confirmation is necessary in TIWG.
