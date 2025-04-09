@@ -155,7 +155,10 @@
             "example": "22"
           },
           "tariff_expiry": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time",
+            "description": "Date format in ISO 8601.",
+            "example": "2026-04-16T00:00:00+01:00"
           },
           "contract_start_date": {
             "type": "string",
