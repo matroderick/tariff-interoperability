@@ -294,7 +294,7 @@
       "oidcAuth": {
         "type": "openIdConnect",
         "openIdConnectUrl": "https://auth.example.com/.well-known/openid-configuration",
-        "description": "This API uses OpenID Connect (OIDC) for Machine-to-Machine (M2M) authentication.\n- Uses TLS 1.3 for secure communication.\n- Authentication is JWT token-based.\n- Clients must present a valid client certificate and JWT for authentication."
+        "description": "This API uses OpenID Connect (OIDC) for Machine-to-Machine (M2M) authentication.\n- Uses TLS 1.3 for secure communication.\n- Authentication is JWT token-based.\n- Clients must present a valid client certificate and JWT for authentication.\n- Further discussion and confirmation is necessary in TIWG."
       }
     }
   }
