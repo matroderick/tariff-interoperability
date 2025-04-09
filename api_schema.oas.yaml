@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: API for listing and searching data based on the schema
 servers:
-  - url: https://api.example.com/v1
+  - url: https://TO-BE-HOSTED-BY-EACH-SERVICE-PROVIDER
     description: Production server
 paths:
   /tariff:
@@ -24,13 +24,14 @@ paths:
           description: Bad Request
         "401":
           description: Unauthorized
-  /tariff/region/{code}:
+  /tariff/region/{region}:
     get:
       summary: Search tariff data by region
       description: Retrieves a list of data entries filtered by the specified region.
+      operationId: region
       parameters:
         - name: region
-          in: query
+          in: path
           required: true
           description: Region to filter the data by
           schema:
