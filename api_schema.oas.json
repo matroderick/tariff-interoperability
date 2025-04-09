@@ -3,7 +3,7 @@
   "info": {
     "title": "API for sharing Tariff data",
     "version": "1.0.0",
-    "description": "API for listing and searching data based on the schema, which will be hosted and published by each service provider."
+    "description": "API for listing and searching Tariff data based on the schema, which will be implemented, hosted and published by each service provider."
   },
   "servers": [
     {
