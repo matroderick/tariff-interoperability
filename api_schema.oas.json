@@ -187,7 +187,7 @@
             "description": "Indicates direction of energy transfer this tariff applies to.",
             "example": "IMPORT"
           },
-          "the_type": {
+          "tariff_type": {
             "type": "string",
             "enum": ["COMMODITY", "NON_COMMODITY"],
             "description": "Indicates tariff type.",
