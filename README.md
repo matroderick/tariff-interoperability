@@ -40,6 +40,7 @@ Defines mandatory and optional data fields and their formats to be used in suppl
 Serves as a blueprint for suppliers to develop their tariff-sharing APIs.
 
 👉 **View the API specification draft:** [API Specification](https://38db35b56c92.edge.eu.portal.konghq.com/apis/api-for-sharing-tariff-data-1-0-0/specifications/84d45b00-df1b-40d4-a322-708590da9549).
+👉 **View the OIDC Reference:** [OIDC M2M Standard Flow](https://github.com/Retail-Energy-Code/tariff-interoperability/blob/main/OIDC.png).
 
 ---
 
