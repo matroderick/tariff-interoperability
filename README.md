@@ -29,12 +29,12 @@ Once finalized, these solutions will be reflected in REC text and formally consu
 
 ## Key Deliverables
 
-### 1. Tariff Data Specification (TDS)
+### 1. Tariff Data Standard (TDS)
 Defines mandatory and optional data fields and their formats to be used in supplier APIs.
 
-👉 **View the current TDS draft:** [Data Specification](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FRetail-Energy-Code%2Ftariff-interoperability%2Frefs%2Fheads%2Fmain%2FTariff%2520Data%2520Specification.xlsx&wdOrigin=BROWSELINK).
+👉 **View the current TDS draft:** [Tariff Data Standard](https://github.com/Retail-Energy-Code/tariff-interoperability/blob/main/Tariff%20Data%20Standard.xlsx).
 
-👉 **View the previous feedback received on the TDS:** [TDS Feedback](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FRetail-Energy-Code%2Ftariff-interoperability%2Frefs%2Fheads%2Fmain%2Ffeedback%2FFeedback%2520on%2520Tariff%2520Data%2520Specification%2520(TDS).xlsx&wdOrigin=BROWSELINK).
+👉 **View the previous feedback received on the TDS:** [TDS Feedback](https://github.com/Retail-Energy-Code/tariff-interoperability/blob/main/feedback/Feedback%20on%20Tariff%20Data%20Standard.xlsx).
 
 ### 2. API Specification
 Serves as a blueprint for suppliers to develop their tariff-sharing APIs.
@@ -55,9 +55,9 @@ Or through email to:
 
 As we move into solution development, we will be seeking your input and review across a number of documents. Providing feedback through the [**GitHub discussion**](https://github.com/Retail-Energy-Code/tariff-interoperability/discussions/) feature will be open, transparent and will allow for other interested stakeholders to interact with your feedback and stimulate helpful discussion.
 
-- For the TDS: Thanks for the feedback we received through the structure Excel spreadsheet. You can view this feedback here: [TDS Feedback](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FRetail-Energy-Code%2Ftariff-interoperability%2Frefs%2Fheads%2Fmain%2Ffeedback%2FFeedback%2520on%2520Tariff%2520Data%2520Specification%2520(TDS).xlsx&wdOrigin=BROWSELINK).
+- For the TDS: Thanks for the feedback we received through the structure Excel spreadsheet. You can view this feedback here: [TDS Feedback](https://github.com/Retail-Energy-Code/tariff-interoperability/blob/main/feedback/Feedback%20on%20Tariff%20Data%20Standard.xlsx).
 
-- For the API spec: Please provide direct comments or documents.
+- For the API spec: This feedback can be viewed here: [API Spec Feedback](https://github.com/Retail-Energy-Code/tariff-interoperability/blob/main/feedback/Tariff%20Interoperability_API%20Specification%20Central%20Feedback.xlsx).
 
 All feedback will be:
 - Reviewed and anonymised
