@@ -47,9 +47,7 @@ Serves as a blueprint for suppliers to develop their tariff-sharing APIs.
 
 ## How to Provide Feedback
 
-We encourage industry stakeholders to share their feedback 
-
-through the use of the [**GitHub discussion**](https://github.com/Retail-Energy-Code/tariff-interoperability/discussions/) feature.
+We encourage industry stakeholders to share their feedback through the use of the [**GitHub discussion**](https://github.com/Retail-Energy-Code/tariff-interoperability/discussions/) feature.
 
 Or through email to:
 
