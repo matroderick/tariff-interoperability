@@ -47,9 +47,15 @@ Serves as a blueprint for suppliers to develop their tariff-sharing APIs.
 
 ## How to Provide Feedback
 
-We encourage industry stakeholders to share their feedback through **email** to:
+We encourage industry stakeholders to share their feedback 
+
+through the use of the [**GitHub discussion**] (https://github.com/Retail-Energy-Code/tariff-interoperability/discussions/) feature.
+
+Or through email to:
 
 📩 **chris.stock@retailenergycode.co.uk**
+
+As we move into solution development, we will be seeking your input and review across a number of documents. Providing feedback through the [**GitHub discussion**] (https://github.com/Retail-Energy-Code/tariff-interoperability/discussions/) feature will be open, transparent and will allow for other interested stakeholders to interact with your feedback and stimulate helpful discussion.
 
 - For the TDS: Thanks for the feedback we received through the structure Excel spreadsheet. You can view this feedback here: [TDS Feedback](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FRetail-Energy-Code%2Ftariff-interoperability%2Frefs%2Fheads%2Fmain%2Ffeedback%2FFeedback%2520on%2520Tariff%2520Data%2520Specification%2520(TDS).xlsx&wdOrigin=BROWSELINK).
 
