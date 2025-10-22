@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: API for listing and searching Tariff data based on the schema, which will be implemented, hosted and published by each service provider.
 servers:
-  - url: https://TO-BE-HOSTED-BY-EACH-SERVICE-PROVIDER
+  - url: "https://tariffs.energy-supplier.com/"
     description: Production server
 paths:
   /tariff:

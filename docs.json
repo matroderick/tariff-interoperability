@@ -1,0 +1,52 @@
+{
+	"$schema": "https://mintlify.com/docs.json",
+	"theme": "maple",
+	"name": "Tariff Interoperability",
+	"colors": {
+		"primary": "#0D3373",
+		"light": "#07C983",
+		"dark": "#0D3373"
+	},
+	"navigation": {
+		"pages": [
+			"api-reference/tariff",
+			"api-reference/tariff-region",
+			"api-reference/authenticate"
+		]
+	},
+	"openapi": {
+		"tab": "api reference",
+		"groups": [
+			{
+				"group": "endpoints",
+				"openapi": {
+					"source": "/api-reference/api_schema.oas.yaml",
+					"directory": "api-reference"
+				}
+			}
+		]
+	},
+	"logo": {
+		"light": "https://www.retailenergycode.co.uk/fs/wp-content/uploads/2022/11/RECCo-Logo-Wordmark-PB.png",
+		"dark": "https://www.retailenergycode.co.uk/fs/wp-content/uploads/2022/11/RECCo-Logo-Wordmark-PB.png",
+		"href": "https://www.retailenergycode.co.uk/"
+	},
+	"navbar": {
+		"links": [
+			{
+				"label": "project page",
+				"href": "https://www.retailenergycode.co.uk/our-programmes/tariff-interoperability-project/"
+			}
+		],
+		"primary": {
+			"type": "button",
+			"label": "working group",
+			"href": "https://recportal.co.uk/web/tariff-interoperability-working-group"
+		}
+	},
+	"footer": {
+		"socials": {
+			"linkedin": "https://www.linkedin.com/company/the-retail-energy-code-company/"
+		}
+	}
+}
