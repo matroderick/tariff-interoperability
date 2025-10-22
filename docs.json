@@ -9,6 +9,7 @@
 	},
 	"navigation": {
 		"pages": [
+			"index",
 			"api-reference/tariff",
 			"api-reference/tariff-region",
 			"api-reference/authenticate"
